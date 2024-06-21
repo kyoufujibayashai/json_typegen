@@ -1,4 +1,5 @@
 [workspace]
+resolver = "2"
 members = [
     "json_typegen_shared",
     "json_typegen_cli",

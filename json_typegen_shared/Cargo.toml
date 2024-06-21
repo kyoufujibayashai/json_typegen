@@ -10,7 +10,7 @@ homepage = "https://typegen.vestera.as"
 repository = "https://github.com/evestera/json_typegen"
 documentation = "https://docs.rs/json_typegen_shared"
 readme = "README.md"
-edition = "2018"
+edition = "2021"
 exclude = ["/benches/"]
 
 [features]
@@ -22,12 +22,12 @@ option-parsing = ["syn", "synom"]
 progress = ["indicatif"]
 
 [dependencies]
-ureq = { version = "2.4.0", optional = true, features = ["charset"] }
-thiserror = "1.0"
-linked-hash-map = "0.5.4"
+ureq = { version = "2.9.7", optional = true, features = ["charset"] }
+thiserror = "1.0.61"
+linked-hash-map = "0.5.6"
 syn = { version = "0.11", features = ["full", "parsing"], optional = true }
 synom = { version = "0.11.3", optional = true }
-indicatif = { version = "0.16.2", optional = true }
+indicatif = { version = "0.17.8", optional = true }
 
 [dev-dependencies]
 testsyn = { package = "syn", version = "0.15", features = ["full", "parsing", "extra-traits"] }

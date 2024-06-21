@@ -2,7 +2,7 @@
 name = "json_typegen_wasm"
 version = "0.7.0"
 authors = ["Erik Vesteraas <erik@vestera.as>"]
-edition = "2018"
+edition = "2021"
 publish = false
 description = "WASM wrapper for json_typegen. Codegen from JSON samples."
 homepage = "https://typegen.vestera.as"
@@ -13,20 +13,20 @@ license = "MIT"
 crate-type = ["cdylib"]
 
 [dependencies]
-cfg-if = "0.1.5"
-wasm-bindgen = "0.2.71"
+cfg-if = "1.0.0"
+wasm-bindgen = "0.2.92"
 json_typegen_shared = { path = "../json_typegen_shared", default-features = false, features = ["option-parsing"] }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
 # code size when deploying.
-console_error_panic_hook = { version = "0.1.5", optional = true }
+console_error_panic_hook = { version = "0.1.7", optional = true }
 
 # `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
 # compared to the default allocator's ~10K. It is slower than the default
 # allocator, however.
-wee_alloc = { version = "0.4.2", optional = true }
+wee_alloc = { version = "0.4.5", optional = true }
 
 [features]
 #default = ["console_error_panic_hook"]

@@ -12,11 +12,16 @@ impl FileWithProgress {
     pub fn open<P: AsRef<Path>>(path: P) -> std::io::Result<Self> {
         let file = File::open(path)?;
         let len = file.metadata()?.len();
+
+        let progress_style = ProgressStyle::default_bar()
+            .template(
+                "[{elapsed_precise}] {bar:40.cyan/blue} {bytes}/{total_bytes} Processing file...",
+            )
+            .map_err(|e| std::io::Error::new(std::io::ErrorKind::Other, e.to_string()))?;
+
         Ok(FileWithProgress {
             file,
-            progress: ProgressBar::new(len).with_style(ProgressStyle::default_bar().template(
-                "[{elapsed_precise}] {bar:40.cyan/blue} {bytes}/{total_bytes} Processing file...",
-            )),
+            progress: ProgressBar::new(len).with_style(progress_style),
         })
     }
 }
