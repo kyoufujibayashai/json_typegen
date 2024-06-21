@@ -41,10 +41,10 @@ make sure your `Cargo.toml` contains something like:
 
 ```toml
 [dependencies]
-serde = "1.0"
-serde_derive = "1.0"
+serde = "1.0.203"
+serde_derive = "1.0.203"
 # Not required for the types themselves, but you probably also want:
-serde_json = "1.0"
+serde_json = "1.0.117"
 ```
 
 ## Options and configurations
